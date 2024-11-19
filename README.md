@@ -22,14 +22,15 @@ A responsive web application for managing users (view, add, edit, delete) using 
 ## Setup Instructions
 
   1. Clone the repository:
-     git clone <repo-url>
+     git clone <repo-url> repo-url
+     
      cd user-management-dashboard
      
-  2. Install dependencies:
+  3. Install dependencies:
      npm install
   
-  3. Start the development server:
+  4. Start the development server:
      npm start
   
-  4. Open the application in your browser:
+  5. Open the application in your browser:
      http://localhost:3000
