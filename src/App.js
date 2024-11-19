@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import UserList from './components/UserList';
+import UserForm from './components/UserForm';
+import "./App.css";
 
-function App() {
+const App = () => {
+  const [users, setUsers] = useState([]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="container">
+        <Routes>
+          <Route path="/" element={<UserList users={users} setUsers={setUsers} />} />
+          <Route path="/add-user" element={<UserForm updateUsers={setUsers} />} />
+          <Route path="/edit-user/:id" element={<UserForm updateUsers={setUsers} />} />
+        </Routes>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
